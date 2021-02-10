@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Old+Standard+TT:wght@700&display=swap');
+
+
+body {
+  margin: 0 auto;
+}
+
+header {
+  background-color: #4c4641;
+  padding: 0.5em;
+}
+
+.title {
+  font-family: 'Architects Daughter', serif;
+  color: white;
+  font-size: 3em;
+  margin: 0.2em;
+}
+
+.subtitle {
+  color: lightgrey;
+  font-size: 50%;
+  font-weight: normal;
+}
+
+main {
+  background-color: #f2e8e0;
+  margin: 0 2em;
+}
