@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Old+Standard+TT:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
-  margin: 0 auto;
+  margin: 0rem auto;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 header {
+  font-family: 'Architects Daughter', serif;
   background-color: #4c4641;
-  padding: 0.5em;
+  padding: 0.2rem;
+  text-align: left;
 }
 
 .title {
-  font-family: 'Architects Daughter', serif;
   color: white;
-  font-size: 3em;
-  margin: 0.2em;
+  font-size: 3rem;
+  margin: 0.2rem;
 }
 
 .subtitle {
@@ -23,7 +29,94 @@ header {
   font-weight: normal;
 }
 
+.headertext {
+  margin: 0rem;
+  padding: 0rem;
+  text-align: right;
+  color: lightgrey;
+}
+
 main {
-  background-color: #f2e8e0;
-  margin: 0 2em;
+  background-color: #f8f0e8;
+  margin: 0rem 5rem;
+  padding: 1rem 2rem;
+  border-left: 20px dotted white;
+}
+
+#messagebox {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: white;
+  height: 15rem;
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bubble {
+  margin: 0.5rem;
+  width: 50%;
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.you {
+  color: white;
+  background-color: #2881d9;
+  align-self: flex-end;
+}
+
+.papy {
+  background-color: lightgrey;
+}
+
+.form {
+  margin: 1rem;
+}
+
+#userentry {
+  margin: 1rem;
+  width: 90%;
+}
+
+#map {
+  margin: 1rem auto;
+  width: 90%;
+  height: 20rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f0f0f0;
+  border-top: 2px solid #dcdcdc;
+}
+
+#author {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.links {
+  display: flex;
+  margin: 1rem;
+}
+
+.linkicon {
+  display: block;
+  margin: 0 0.5rem;
+  width: 2rem;
+  height: 2rem;
 }
