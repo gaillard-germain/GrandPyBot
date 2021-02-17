@@ -8,7 +8,8 @@ class MockResponse:
         if result_type == 'loc':
             self.results = {"candidates": [
                                 {"formatted_address": "Paris, France",
-                                 "name": "Paris"}]}
+                                 "name": "Paris"}],
+                            "status": "OK"}
         elif result_type == 'title':
             self.results = {"query": {"search": [{"title": "Paris"}]}}
         elif result_type == 'info':
