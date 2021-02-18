@@ -9,11 +9,19 @@ $(function() {
     .done(function(data) {
       var dialog = $('#userentry').val();
       addBubble(dialog, 'you');
-      dialog = data.name + '<br>' + data.address;
-      addBubble(dialog, 'papy');
-      dialog = data.info
-      addBubble(dialog, 'papy')
-      $('#map').attr("src", data.source);
+      if (data == "nothing") {
+        dialog = "Répète moi ça poussin... Je n'ai pas tout compris...";
+        addBubble(dialog, 'papy');
+      }else if (data == "noplace") {
+        dialog = "Je n'en ai pas la moindre idée ma grenouille...désolé.";
+        addBubble(dialog, 'papy');
+      }else {
+        dialog = data.name + '<br>' + data.address;
+        addBubble(dialog, 'papy');
+        dialog = data.info
+        addBubble(dialog, 'papy')
+        $('#map').attr("src", data.source);
+      }
     });
     event.preventDefault();
     event.stopPropagation();

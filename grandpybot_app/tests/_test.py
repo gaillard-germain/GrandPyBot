@@ -1,4 +1,4 @@
-from grandpybot_app import get_loc, get_title, get_info
+from grandpybot_app import get_loc, get_title, get_info, parse_entry
 import requests
 
 
@@ -48,3 +48,7 @@ def test_get_answer(monkeypatch):
     assert fake_info == info_result
     fake_loc['info'] = fake_info
     assert fake_loc == answer_result
+
+def test_parse_entry():
+    entry = "dis-moi papy, sais tu ou ce trouve la gare à Bordeaux?"
+    assert parse_entry(entry) == "gare bordeaux"

@@ -2,6 +2,7 @@ import requests
 import re
 import json
 
+
 def get_loc(query, key):
     url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
     params = {"input": query,
@@ -11,10 +12,11 @@ def get_loc(query, key):
               "key": key}
     response = requests.get(url=url, params=params)
     data = response.json()
+    loc = {}
     if data['status'] == "OK":
-        loc = {'name': data['candidates'][0]['name'],
-               'address': data['candidates'][0]['formatted_address'],
-               'source': "https://www.google.com/maps/embed/v1/place?q={}&key={}".format(query, key)}
+        loc['name'] = data['candidates'][0]['name']
+        loc['address'] = data['candidates'][0]['formatted_address']
+        loc['source'] = "https://www.google.com/maps/embed/v1/place?q={}&key={}".format(query, key)
     return loc
 
 def get_title(query):
@@ -42,19 +44,18 @@ def get_info(title, sentence_number):
     data = response.json()
     return data['query']['pages'][0]['extract']
 
-def parse_entry():
-    with open('json/fr.json') as data:
+def parse_entry(entry):
+    with open('grandpybot_app/data/unwanted.json') as data:
         unwanted = json.load(data)
-    entry = "dit moi papy... sais-tu ou ce trouve l'adresse de l'opera de Paris?"
-    pattern = re.compile(r'(\badresse\s)+(\bde la\s|\bdu\s|\bd\W|\bde l\W)', re.IGNORECASE)
-    begin = pattern.search(entry).end()
-    entry = entry[begin:]
-    entry = re.split('\W+', entry)
+    entry = re.split(r'\W+|\d+', entry.lower())
+    result = []
     for word in entry:
-        if word in unwanted:
-            entry.remove(word)
-    entry = ' '.join(entry[:-1])
-    print(entry)
+        if word and word not in unwanted:
+            result.append(word)
+    result = ' '.join(result)
+    return result
 
-if __name__ == '__main__':
-    parse_entry()
+def papy_style(place):
+    place['name'] = "Bien sûr mon crapaud, {}, ce trouve: ".format(place['name'])
+    place['info'] = "A ce propos t'ai je déja dit que: {}".format(place['info'])
+    return place
