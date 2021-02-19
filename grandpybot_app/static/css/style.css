@@ -19,20 +19,28 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0.2em 0.2em 0 0.2em;
   font-family: 'Architects Daughter', serif;
-  background-color: #4c4641;
-  padding: 0.2em;
+  background-color: #a6947e;
+  border-bottom: 0.5em solid #d8ccc1;
+}
+
+.logoframe {
+  border-radius: 50%;
+  background-color: #dddad8;
+  margin: 0.5em;
 }
 
 .logo {
   width: 5em;
-  height: auto;
+  height: 5em;
 }
 
 .title {
   color: white;
   font-size: 3em;
   margin: 0.2em;
+  margin-left: 0.5em;
   flex-grow: 2;
   text-align: left;
 }
@@ -45,17 +53,33 @@ header {
 
 .headertext {
   margin: 0em 1em;
-  padding: 0em;
+  padding: 0.2em 0.2em 0 0.2em;
   text-align: right;
-  color: lightgrey;
+  color: black;
   align-self: flex-end;
+  background-color: #d8ccc1;
+  border-radius: 5px 5px 0 0;
+}
+
+.middle {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.side {
+  margin: 0;
+  width: 1.2em;
+  background-color: #4c4641;
 }
 
 main {
-  margin: 0 auto;
-  background-color: #fbf7f1;
-  padding: 1em 2em;
-  border-left: 20px dotted white;
+  margin: 0;
+  background-color: #4c4641;
+  padding: 1em;
+  border-left: 1em dashed white;
+  border-right: 1em dashed white;
   width: 70%;
 }
 
@@ -82,11 +106,21 @@ main {
   animation: rotation 2s linear infinite;
 }
 
-#thinkicon {
+#thinkbubble {
   display: none;
-  width: 3em;
-  height: auto;
-  margin: 2em;
+  flex-direction: row;
+  align-items: center;
+}
+
+#thinkbubble p {
+  margin: 0;
+}
+
+#thinkicon {
+  display: block;
+  width: 2em;
+  height: 2em;
+  margin: 0 0.5em;
 }
 
 .bubble {
@@ -100,16 +134,20 @@ main {
 
 .you {
   color: white;
-  background-color: #2881d9;
+  background-color: #adc5da;
   align-self: flex-end;
 }
 
 .papy {
-  background-color: lightgrey;
+  background-color: #f3e3cb;
 }
 
 .form {
   margin: 1em;
+}
+
+.form label {
+  color: white;
 }
 
 #userentry {
@@ -153,17 +191,18 @@ footer {
   height: 2em;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   header {
     justify-content: center;
   }
 
   main {
-    width: 80%
+    width: 80%;
+    padding: 0.8em;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 700px) {
   header {
     font-size: 0.8em;
   }
@@ -173,23 +212,31 @@ footer {
     flex-grow: 0;
   }
 
+  .leftside {
+    border-left: 0.8em dashed white;
+  }
+
+  .rightside {
+    border-right: 0.8em dashed white;
+  }
+
   main {
+    border: none;
     width: 100%;
     padding: 0.8em 0em;
-    border: none;
   }
 
   #messagebox {
-    border-radius: 0px;
-    border-left: none;
-    border-right: none;
     width: 100%;
   }
 
   #map {
-    border-radius: 0px;
-    border-left: none;
-    border-right: none;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .logoframe {
+    display: none;
   }
 }

@@ -3,14 +3,14 @@ $(function() {
   $('form').on('submit', function (event) {
     var dialog = $('#userentry').val();
     addBubble(dialog, 'you');
-    thinking().scrollIntoView();
+    thinking().scrollIntoView({behavior: "smooth", block: "end"});
     $.ajax({
       url: '/answer',
       data: {userentry : $('#userentry').val()},
       type: 'POST',
       })
     .done(function(data) {
-      $('#thinkicon').hide();
+      $('#thinkbubble').hide();
       if (data == "nothing") {
         dialog = "Répète moi ça poussin... Je n'ai pas tout compris...";
         addBubble(dialog, 'papy');
@@ -35,13 +35,15 @@ function addBubble(dialog, cssClass) {
   var paragraph = document.createElement('p');
   paragraph.classList.add('bubble', cssClass);
   paragraph.innerHTML = dialog;
+  paragraph.scrollIntoView({behavior: "smooth", block: "end"})
   messagebox.appendChild(paragraph);
+  return paragraph
 }
 
 function thinking() {
   var messagebox = document.getElementById('messagebox');
-  var thinkIcon = document.getElementById('thinkicon');
-  thinkicon.style.display = "block";
-  messagebox.appendChild(thinkIcon);
-  return thinkIcon
+  var thinkBubble = document.getElementById('thinkbubble');
+  thinkBubble.style.display = "flex";
+  messagebox.appendChild(thinkBubble);
+  return thinkBubble
 }

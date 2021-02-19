@@ -1,6 +1,7 @@
 import requests
 import re
 import json
+from random import choice
 
 
 def get_loc(query, key):
@@ -56,6 +57,8 @@ def parse_entry(entry):
     return result
 
 def papy_style(place):
-    place['name'] = "Bien sûr mon crapaud, {}, ce trouve: ".format(place['name'])
-    place['info'] = "A ce propos t'ai je déja dit que: {}".format(place['info'])
+    with open('grandpybot_app/data/papy.json') as data:
+        papy = json.load(data)
+    place['name'] = choice(papy['start']).format(place['name'])
+    place['info'] = choice(papy['end']).format(place['info'])
     return place

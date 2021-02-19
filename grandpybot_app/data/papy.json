@@ -1,0 +1,18 @@
+{"start": [
+  "Bien sûr mon poussin, {}, ce trouve: ",
+  "Heu,... ah oui cela me revient, {}, est situé: ",
+  "Mmmh... tu veux parler de {}, je crois que l'adresse postale est: ",
+  "Mais oui chaton, {}, c'est: ",
+  "J'avais un vieil ami qui habité pas loin de {}, l'adresse c'est:"
+],
+ "end": [
+   "A ce propos mon chat, savais-tu que: {}",
+   "Dis moi crapaud, t'ai je déjà dit que: {}",
+   "Je t'ai déjà raconté que: {}",
+   "...mmmh..Ca me rappel que: {}",
+   "Et pour ta gouverne: {}",
+   "Je me souviens que madame Thérèse m'as dit que: {}",
+   "Héhé Robert, tu te souviens de Robert?... et bien il disait que: {}",
+   "Sur wikipedia ils disent... bha quoi? je suis un papy 2.0...ou j'en etais?...ah, oui, donc ils disent que: {}"
+ ]
+}
