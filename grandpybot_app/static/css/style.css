@@ -15,16 +15,26 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-family: 'Architects Daughter', serif;
   background-color: #4c4641;
   padding: 0.2em;
-  text-align: left;
+}
+
+.logo {
+  width: 5em;
+  height: auto;
 }
 
 .title {
   color: white;
   font-size: 3em;
   margin: 0.2em;
+  flex-grow: 2;
+  text-align: left;
 }
 
 .subtitle {
@@ -34,15 +44,16 @@ header {
 }
 
 .headertext {
-  margin: 0em;
+  margin: 0em 1em;
   padding: 0em;
   text-align: right;
   color: lightgrey;
+  align-self: flex-end;
 }
 
 main {
   margin: 0 auto;
-  background-color: #f8f0e8;
+  background-color: #fbf7f1;
   padding: 1em 2em;
   border-left: 20px dotted white;
   width: 70%;
@@ -60,6 +71,22 @@ main {
   width: 90%;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+@keyframes rotation {
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(359deg);}
+}
+
+.imgrotate {
+  animation: rotation 2s linear infinite;
+}
+
+#thinkicon {
+  display: none;
+  width: 3em;
+  height: auto;
+  margin: 2em;
 }
 
 .bubble {
@@ -96,6 +123,7 @@ main {
   height: 20em;
   border: 1px solid grey;
   border-radius: 10px;
+  background-color: #dbdbdb;
 }
 
 footer {
@@ -126,6 +154,10 @@ footer {
 }
 
 @media screen and (max-width: 900px) {
+  header {
+    justify-content: center;
+  }
+
   main {
     width: 80%
   }
@@ -134,6 +166,11 @@ footer {
 @media screen and (max-width: 640px) {
   header {
     font-size: 0.8em;
+  }
+
+  .title {
+    text-align: center;
+    flex-grow: 0;
   }
 
   main {

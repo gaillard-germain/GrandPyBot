@@ -13,15 +13,16 @@
   </head>
   <body>
     <header>
+      <img class="logo" src="{{ url_for('static', filename='images/bot_logo.png') }}" alt="A robot logo">
       <h1 class="title">Grandpy'bot <span class="subtitle">le papy-robot</span></h1>
       <p class="headertext">Vous voulez une adresse? vous aurez bien plus...</p>
     </header>
     <main>
-      <div id="messagebox"></div>
+      <div id="messagebox"><img id="thinkicon" class="imgrotate" src="{{ url_for('static', filename='images/bot_think.png') }}" alt=""></div>
       <form class="form" action="index.html" method="post">
         <label for="userentry">Posez votre question à GranPy'Bot dans le champs ci-dessous</label>
         <input id="userentry" type="text" name="userentry" value="" required>
-        <input type="submit" name="button" value="submit">
+        <input type="submit" name="button" value="Envoyer">
       </form>
       <iframe id="map" src="" allowfullscreen></iframe>
     </main>
