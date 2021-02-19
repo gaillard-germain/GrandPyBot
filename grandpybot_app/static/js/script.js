@@ -1,4 +1,3 @@
-
 $(function() {
   $('form').on('submit', function (event) {
     var dialog = $('#userentry').val();
