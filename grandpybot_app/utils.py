@@ -3,13 +3,15 @@ import re
 import json
 from random import choice
 
+
 class Seeker():
     @staticmethod
     def get_loc(query, key):
-        """Get name and address of a place with a query using
+        """Gets name and address of a place with a query using
            a request to gooleapis (needs a valid token)"""
 
-        url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
+        url = "https://maps.googleapis.com/maps/api/place/\
+findplacefromtext/json"
         params = {"input": query,
                   "inputtype": "textquery",
                   "language": "fr",
@@ -27,7 +29,7 @@ class Seeker():
 
     @staticmethod
     def get_title(query):
-        """Get an article's title with a query using a request to wiki media api"""
+        """Gets an article's title with a query to wiki media api"""
 
         url = "https://fr.wikipedia.org/w/api.php"
         params = {"action": "query",
@@ -41,7 +43,7 @@ class Seeker():
 
     @staticmethod
     def get_info(title, sentence_number):
-        """Extract n sentences from wikipedia article with its title"""
+        """Extracts n sentences from wikipedia article using its title"""
 
         url = "https://fr.wikipedia.org/w/api.php"
         params = {"action": "query",
@@ -56,10 +58,11 @@ class Seeker():
         data = response.json()
         return data['query']['pages'][0]['extract']
 
+
 class Former():
     @staticmethod
     def parse_entry(entry):
-        """Parse a string to isolate keywords"""
+        """Parses a string to isolate keywords"""
 
         with open('grandpybot_app/data/unwanted.json') as data:
             unwanted = json.load(data)
@@ -73,7 +76,7 @@ class Former():
 
     @staticmethod
     def papy_style(place):
-        """Added random sentences to a dict string value"""
+        """Adds a random sentences to a dict string value"""
 
         with open('grandpybot_app/data/papy.json') as data:
             papy = json.load(data)

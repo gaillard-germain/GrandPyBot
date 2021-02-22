@@ -2,10 +2,9 @@ from grandpybot_app import Seeker, Former
 import requests
 
 
-
 class MockResponse:
     def __init__(self, result_type):
-        """Mock the Requests response object"""
+        """Mocks the Requests response object"""
 
         if result_type == 'loc':
             self.results = {"candidates": [
@@ -15,14 +14,15 @@ class MockResponse:
         elif result_type == 'title':
             self.results = {"query": {"search": [{"title": "Paris"}]}}
         elif result_type == 'info':
-            self.results = {"query": {"pages" : [{"extract": "About Paris"}]}}
+            self.results = {"query": {"pages": [{"extract": "About Paris"}]}}
 
     def json(self):
         return self.results
 
+
 def test_get_answer(monkeypatch):
-    """Test the dict to send to ajax mocking google and media wiki
-       apis responses"""
+    """Tests the dictionnary, which contains google and media wiki
+       apis responses, to send to ajax (using mocks)"""
 
     embed_url = "https://www.google.com/maps/embed/v1/place"
     loc_results = {"name": "Paris",
@@ -41,7 +41,7 @@ def test_get_answer(monkeypatch):
         return MockResponse('title')
 
     def mock_get_info(*args, **kwargs):
-            return MockResponse('info')
+        return MockResponse('info')
 
     monkeypatch.setattr(requests, 'get', mock_get_loc)
     fake_loc = Seeker.get_loc("paris", "")
@@ -55,8 +55,9 @@ def test_get_answer(monkeypatch):
     fake_loc['info'] = fake_info
     assert fake_loc == answer_result
 
+
 def test_parse_entry():
-    """Test the user entry parser"""
+    """Tests the user entry parser"""
 
     entry = "dis-moi papy, sais tu ou ce trouve la gare à Bordeaux?"
     assert Former.parse_entry(entry) == "gare bordeaux"
