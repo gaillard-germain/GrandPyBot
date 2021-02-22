@@ -21,7 +21,7 @@ body::before {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url('../images/lights.jpeg');
+  background-image: url('../images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,13 +35,13 @@ header {
   flex-wrap: wrap;
   padding: 0.2em 0.2em 0 0.2em;
   font-family: 'Architects Daughter', serif;
-  background-color: #866e51;
-  border-bottom: 0.5em solid #d8ccc1;
+  background-color: #70685c;
+  border-bottom: 0.5em solid #b8b8b7;
 }
 
 .logoframe {
   border-radius: 50%;
-  background-color: #e4e0db;
+  background-color: #f6f6f6;
   margin: 0.5em;
 }
 
@@ -71,7 +71,7 @@ header {
   text-align: right;
   color: black;
   align-self: flex-end;
-  background-color: #d8ccc1;
+  background-color: #b8b8b7;
   border-radius: 5px 5px 0 0;
 }
 
@@ -152,12 +152,12 @@ main {
 
 .you {
   color: white;
-  background-color: #6c8dbc;
+  background-color: #5693cb;
   align-self: flex-end;
 }
 
 .papy {
-  background-color: #f3e3cb;
+  background-color: #e9e5db;
 }
 
 .form {
