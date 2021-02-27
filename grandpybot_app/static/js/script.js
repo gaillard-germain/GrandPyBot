@@ -6,7 +6,7 @@ $(function() {
     $.ajax({
       url: '/answer',
       data: {userentry : $('#userentry').val()},
-      type: 'POST',
+      type: 'POST'
       })
     .done(function(data) {
       $('#thinkbubble').hide();
@@ -23,7 +23,7 @@ $(function() {
         addBubble(dialog, 'papy');
         $('#map').attr("src", data.source);
       }
-    } );
+    });
     event.preventDefault();
     event.stopPropagation();
   });

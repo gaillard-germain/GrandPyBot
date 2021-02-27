@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=fr>
+<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
     <title>GrandPyBot</title>
@@ -31,8 +31,8 @@
         </div>
         <form class="form" action="index.html" method="post">
           <label for="userentry">Posez votre question à GrandPy'Bot dans le champs ci-dessous</label>
-          <input id="userentry" type="text" name="userentry" value="" minlength="3" required>
-          <input type="submit" name="button" value="Envoyer">
+          <input id="userentry" type="text" name="userentry" value="" minlength="3" placeholder="ex: Salut GrandPy, est ce que tu connait l'adresse d'OpenClassrooms?" required>
+          <input class="button" type="submit" name="button" value="Envoyer">
         </form>
         <iframe id="map" src="" allowfullscreen></iframe>
       </main>

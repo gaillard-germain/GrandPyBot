@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+  --main_bg_color: rgba(20, 15, 10, 0.6);
+  --tab_color: #ead7bd;
+}
+
 html {
   font-size: calc(10px + 0.5vw);
   width: 100%;
@@ -36,7 +41,7 @@ header {
   padding: 0.2em 0.2em 0 0.2em;
   font-family: 'Architects Daughter', serif;
   background-color: #70685c;
-  border-bottom: 0.5em solid #b8b8b7;
+  border-bottom: 0.5em solid var(--tab_color);
 }
 
 .logoframe {
@@ -71,7 +76,7 @@ header {
   text-align: right;
   color: black;
   align-self: flex-end;
-  background-color: #b8b8b7;
+  background-color: var(--tab_color);
   border-radius: 5px 5px 0 0;
 }
 
@@ -85,18 +90,18 @@ header {
 .dashedside {
   margin: 0;
   background-color: transparent;
-  border-left: 1em dashed rgba(20, 15, 10, 0.8);
+  border-left: 1em dashed var(--main_bg_color);
 }
 
 .side {
   margin: 0;
   width: 1.2em;
-  background-color: rgba(20, 15, 10, 0.8);
+  background-color: var(--main_bg_color);
 }
 
 main {
   margin: 0;
-  background-color: rgba(20, 15, 10, 0.8);
+  background-color: var(--main_bg_color);
   padding: 1em;
   width: 70%;
 }
@@ -146,7 +151,7 @@ main {
   width: 50%;
   padding: 0.5em;
   text-align: left;
-  border: 1px solid grey;
+  border: 1px solid black;
   border-radius: 10px;
 }
 
@@ -171,6 +176,24 @@ main {
 #userentry {
   margin: 1em;
   width: 90%;
+  height: 4em;
+  font-size: 1em;
+}
+
+.button {
+  height: 4em;
+  padding: 0.2em;
+  background-color: lightgrey;
+  border: 2px outset darkgrey;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  border: 2px inset darkgrey;
+  background-color: grey;
+  color: lightgrey;
 }
 
 #map {
