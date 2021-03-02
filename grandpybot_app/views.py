@@ -24,7 +24,7 @@ def answer():
             title = Seeker.get_title(place['name'])
         else:
             return "noplace"
-        place['info'] = Seeker.get_info(title, 3)
+        place['info'] = Seeker.get_info(title, 3, keywords)
         place = Former.papy_style(place)
         return jsonify(place)
     else:

@@ -38,11 +38,14 @@ findplacefromtext/json"
                   "srsearch": query}
         response = requests.get(url=url, params=params)
         data = response.json()
-        title = data['query']['search'][0]['title']
-        return title
+        if data['query']['searchinfo']['totalhits']:
+            title = data['query']['search'][0]['title']
+            return title
+        else:
+            return query
 
     @staticmethod
-    def get_info(title, sentence_number):
+    def get_info(title, sentence_number, query):
         """Extracts n sentences from wikipedia article using its title"""
 
         url = "https://fr.wikipedia.org/w/api.php"
@@ -53,10 +56,14 @@ findplacefromtext/json"
                   "exlimit": "1",
                   "titles": title,
                   "explaintext": "1",
-                  "formatversion": "2"}
+                  "formatversion": "2",
+                  "srsearch": query}
         response = requests.get(url=url, params=params)
         data = response.json()
-        return data['query']['pages'][0]['extract']
+        try:
+            return data['query']['pages'][0]['extract']
+        except KeyError:
+            return "...ah ma mémoire me fait défaut."
 
 
 class Former():
