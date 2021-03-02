@@ -12,7 +12,8 @@ class MockResponse:
                                  "name": "Paris"}],
                             "status": "OK"}
         elif result_type == 'title':
-            self.results = {"query": {"search": [{"title": "Paris"}]}}
+            self.results = {"query": {"search": [{"title": "Paris"}],
+                                      "searchinfo": {"totalhits": 1}}}
         elif result_type == 'info':
             self.results = {"query": {"pages": [{"extract": "About Paris"}]}}
 

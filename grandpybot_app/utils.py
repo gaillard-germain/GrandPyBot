@@ -30,7 +30,7 @@ findplacefromtext/json"
     @staticmethod
     def get_title(query):
         """Gets an article's title with a query to wiki media api"""
-
+        print(query)
         url = "https://fr.wikipedia.org/w/api.php"
         params = {"action": "query",
                   "format": "json",
@@ -45,19 +45,18 @@ findplacefromtext/json"
             return query
 
     @staticmethod
-    def get_info(title, sentence_number, query):
+    def get_info(title, sentence_number):
         """Extracts n sentences from wikipedia article using its title"""
-
+        print(title)
         url = "https://fr.wikipedia.org/w/api.php"
         params = {"action": "query",
                   "format": "json",
                   "prop": "extracts",
+                  "titles": title,
                   "exsentences": sentence_number,
                   "exlimit": "1",
-                  "titles": title,
                   "explaintext": "1",
-                  "formatversion": "2",
-                  "srsearch": query}
+                  "formatversion": "2"}
         response = requests.get(url=url, params=params)
         data = response.json()
         try:

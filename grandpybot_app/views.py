@@ -21,10 +21,10 @@ def answer():
     if keywords:
         place = Seeker.get_loc(keywords, key)
         if place:
-            title = Seeker.get_title(place['name'])
+            title = Seeker.get_title(keywords)
         else:
             return "noplace"
-        place['info'] = Seeker.get_info(title, 3, keywords)
+        place['info'] = Seeker.get_info(title, 3)
         place = Former.papy_style(place)
         return jsonify(place)
     else:
