@@ -13,32 +13,28 @@
   </head>
   <body>
     <header>
-      <div class="logoframe">
-        <img class="logo" src="{{ url_for('static', filename='images/bot_logo.png') }}" alt="A robot logo">
+      <div class="titlebox">
+        <div class="logoframe">
+          <img class="logo" src="{{ url_for('static', filename='images/bot_logo.png') }}" alt="A robot logo">
+        </div>
+        <h1 class="title">Grandpy'bot <span class="subtitle">le papy-robot</span></h1>
       </div>
-      <h1 class="title">Grandpy'bot <span class="subtitle">le papy-robot</span></h1>
       <p class="headertext">Vous voulez une adresse? vous aurez bien plus...</p>
     </header>
-    <div class="middle">
-      <div class="side"></div>
-      <div class="dashedside"></div>
-      <main>
-        <div id="messagebox">
-          <div id="thinkbubble" class="bubble papy">
-            <img id="thinkicon" class="imgrotate" src="{{ url_for('static', filename='images/bot_think.png') }}" alt="">
-            <p>...Grandpy réfléchit...(ou il dort, on ne sait pas trop.)</p>
-          </div>
+    <main>
+      <div id="messagebox">
+        <div id="thinkbubble" class="bubble papy">
+          <img id="thinkicon" class="imgrotate" src="{{ url_for('static', filename='images/gear.png') }}" alt="">
+          <p>...Grandpy réfléchit...(ou il dort, on ne sait pas trop.)</p>
         </div>
-        <form class="form" action="index.html" method="post">
-          <label for="userentry">Posez votre question à GrandPy'Bot dans le champs ci-dessous</label>
-          <input id="userentry" type="text" name="userentry" value="" minlength="3" placeholder="ex: Salut GrandPy, est ce que tu connait l'adresse d'OpenClassrooms?" required>
-          <input class="button" type="submit" name="button" value="Envoyer">
-        </form>
-        <iframe id="map" src="about:blank" allowfullscreen></iframe>
-      </main>
-      <div class="dashedside"></div>
-      <div class="side"></div>
-    </div>
+      </div>
+      <form class="form" action="" method="post">
+        <label for="userentry">Posez votre question à GrandPy'Bot dans le champs ci-dessous</label>
+        <input id="userentry" type="text" name="userentry" value="" minlength="3" placeholder="ex: Salut GrandPy, connais tu l'adresse d'OpenClassrooms?" required>
+        <input class="button" type="submit" name="button" value="Envoyer">
+      </form>
+      <iframe id="map" src="about:blank" allowfullscreen></iframe>
+    </main>
     <footer>
       <span id="author">Créé par Germain &lt;screw-pack&gt; GAILLARD</span>
       <div class="links">
