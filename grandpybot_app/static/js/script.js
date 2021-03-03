@@ -11,9 +11,11 @@ $(function() {
     .done(function(data) {
       $('#thinkbubble').hide();
       if (data == "nothing") {
+        console.log('Invalid entry');
         dialog = "Répète moi ça poussin... Je n'ai pas tout compris...";
         addBubble(dialog, 'papy');
       }else if (data == "noplace") {
+        console.log('No place found');
         dialog = "Je n'en ai pas la moindre idée ma grenouille...désolé.";
         addBubble(dialog, 'papy');
       }else {

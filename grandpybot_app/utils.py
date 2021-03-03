@@ -17,14 +17,14 @@ findplacefromtext/json"
                   "language": "fr",
                   "fields": "name,formatted_address",
                   "key": key}
-        embed_url = "https://www.google.com/maps/embed/v1/place"
+        embed_url = "https://www.google.com/maps/embed/v1/place?q={}&key={}"
         response = requests.get(url=url, params=params)
         data = response.json()
         loc = {}
         if data['status'] == "OK":
             loc['name'] = data['candidates'][0]['name']
             loc['address'] = data['candidates'][0]['formatted_address']
-            loc['source'] = "{}?q={}&key={}".format(embed_url, query, key)
+            loc['source'] = embed_url.format(loc['name'].lower(), key)
         return loc
 
     @staticmethod
