@@ -1,4 +1,4 @@
-from grandpybot_app import Seeker, Former
+from grandpybot_app import Seeker
 import requests
 
 
@@ -21,14 +21,14 @@ class MockResponse:
         return self.results
 
 
-def test_get_answer(monkeypatch):
+def test_answer(monkeypatch):
     """Tests the dictionnary, which contains google and media wiki
        apis responses, to send to ajax (using mocks)"""
 
-    embed_url = "https://www.google.com/maps/embed/v1/place"
+    embed_url = "https://www.google.com/maps/embed/v1/place?q=paris&key="
     loc_results = {"name": "Paris",
                    "address": "Paris, France",
-                   "source": "{}?q=paris&key=".format(embed_url)}
+                   "source": embed_url}
 
     title_result = 'Paris'
     info_result = 'About Paris'
@@ -55,10 +55,3 @@ def test_get_answer(monkeypatch):
     assert fake_info == info_result
     fake_loc['info'] = fake_info
     assert fake_loc == answer_result
-
-
-def test_parse_entry():
-    """Tests the user entry parser"""
-
-    entry = "dis-moi papy, sais tu ou ce trouve la gare à Bordeaux?"
-    assert Former.parse_entry(entry) == "gare bordeaux"

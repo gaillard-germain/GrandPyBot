@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
-from grandpybot_app import Seeker, Former
+from grandpybot_app import Seeker, Rhetoric
 
 app.config.from_object('config')
 
@@ -25,7 +25,7 @@ def answer():
         else:
             return "noplace"
         place['info'] = Seeker.get_info(title, 3)
-        place = Former.papy_style(place)
+        place = Rhetoric.papy_style(place)
         return jsonify(place)
     else:
         return "nothing"

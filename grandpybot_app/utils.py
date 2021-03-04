@@ -8,7 +8,7 @@ class Seeker():
     @staticmethod
     def get_loc(query, key):
         """Gets name and address of a place with a query using
-           a request to gooleapis (needs a valid token)"""
+           a request to googleapis (needs a valid token)"""
 
         url = "https://maps.googleapis.com/maps/api/place/\
 findplacefromtext/json"
@@ -65,7 +65,7 @@ findplacefromtext/json"
             return "...ah ma mémoire me fait défaut."
 
 
-class Former():
+class Rhetoric():
     @staticmethod
     def parse_entry(entry):
         """Parses a string to isolate keywords"""
