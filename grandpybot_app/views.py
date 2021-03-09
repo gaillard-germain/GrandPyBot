@@ -17,7 +17,7 @@ def index():
 def answer():
     userentry = request.form['userentry']
     key = app.config['GOOGLE_API_KEY']
-    keywords = Former.parse_entry(userentry)
+    keywords = Rhetoric.parse_entry(userentry)
     if keywords:
         place = Seeker.get_loc(keywords, key)
         if place:
