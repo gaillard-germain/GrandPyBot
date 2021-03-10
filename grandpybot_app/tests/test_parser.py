@@ -6,10 +6,12 @@ def test_irrelevant_words():
     parsed_result = Rhetoric.parse_entry(query)
     assert parsed_result == ""
 
+
 def test_lower_words():
     query = "DIS-MOI PAPY, SAIS TU OU CE TROUVE LA GARE A BORDEAUX?"
     parsed_result = Rhetoric.parse_entry(query)
     assert parsed_result.islower()
+
 
 def test_parser_result():
     query = "dis-moi papy, sais tu ou ce trouve la gare à bordeaux?"

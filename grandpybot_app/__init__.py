@@ -1,3 +1,4 @@
 from flask import Flask
-from .utils import Seeker, Rhetoric
+from .seeker import Seeker
+from .rhetoric import Rhetoric
 from .views import app

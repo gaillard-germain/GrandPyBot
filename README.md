@@ -14,10 +14,12 @@ there are 2 tests functions:
 - test_parser: will test the parsing of the user's entry.
 ## Heroku
 You can try GrandPy'bot at this address: https://sp-grandpybot.herokuapp.com/
+## Localhost
+To launch GrandPy'bot from localhost: In your virtual env, simply launch **run.py** and open your web browser at http://127.0.0.1:5000/.
 ## Sources
 This app uses APIs from Google and Wiki Media.
-And it was developed with Flask framework.
+And it has been developed with Flask framework.
 ## Contacts
-my e-mail: gaillard.germain@gmail.com
-my Github: https://github.com/screw-pack
-my linkedIn: https://www.linkedin.com/in/gaillard-germain-2301861b4/
+- my e-mail: gaillard.germain@gmail.com
+- my Github: https://github.com/screw-pack
+- my linkedIn: https://www.linkedin.com/in/gaillard-germain-2301861b4/
