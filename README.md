@@ -1,11 +1,15 @@
 # GrandPy'bot
 GrandPy'bot is the result of my project 7 as part of my Open Classrooms training as a Python developer.
 It's a web application that allows a user to enter a question regarding the location of a place, it will return an address, a map, and some additional information relating to his request. (at this time, only the French language is available.)
+
+![GrandPy'bot screenshot](grandpybot.png "GrandPy'bot screenshot")
+
 ## Programming Languages
 - python
 - HTML5 CSS3
 - JavaScript Jquery
 ## Modules
+
 All dependencies are listed in requirements.txt
 ## Tests
 Using Pytest
